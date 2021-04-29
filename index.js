@@ -9,18 +9,8 @@ bot.on("ready", async () =>{
     console.log("Le BOT est allumé");
     bot.user.setStatus("online");
     bot.user.setActivity("#help | dev by AYROX", {type: "WATCHING"});
+    bot.user.setActivity("TEST", {type: "PLAYING"});
 });
-
-bot.on("guildMemberAdd", member => {
-    if(bdd["message-bienvenue"]){
-        bot.channels.cache.get("789902274398257172").send(`Bienvenue sur le serveur __**"𝓛'𝓱𝓸𝓶𝓶𝓮 𝓪𝓾𝔁 𝓬𝓱𝓮𝓿𝓮𝓾𝔁 𝓯𝓻𝓲𝓼é𝓼 | :dizzy:"**__\nNe fais pas de bétises, je te surveilles !`);
-    }
-    else{
-        bot.channels.cache.get("789902274398257172").send(`Bienvenue à toi sur le serveur !`);
-    }
-    member.roles.add("789902246409797653");
-
-})
 
 bot.on("message", message => {
     if(message.content.startsWith("#clear")){
